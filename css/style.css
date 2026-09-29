@@ -1,0 +1,633 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    transition: all 0.3s ease; /* Transição global suave */
+}
+
+@font-face {
+    font-family: 'hack';
+    src: url('../font/Elite\ Hacker\ \(Corroded\).ttf');
+         
+    /* font-weight: normal;
+    font-style: normal; */
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif; /* Fallback */
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; /* Fonte moderna para o tema tech */
+    background:#030c1b;
+    color:#ffffff;
+    line-height: 1.6; /* Melhoria na legibilidade */
+}
+
+h1, h2, h3{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+}
+
+/* ESTRUTURA */
+
+.content{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    background:#101826;
+    position:sticky;
+    top:0;
+    z-index:999;
+    border-bottom:2px solid #ff6b00;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+header .content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 10px 20px;
+}
+
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    height: 70px;
+    filter: drop-shadow(0 0 5px rgba(255,107,0,0.5));
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.logo-text span.highlight {
+    color: #ff6b00;
+}
+
+#menu{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+#menu a{
+    text-decoration:none;
+    color:#ffffff;
+    font-weight:bold;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px 0;
+    font-family: "arial black";
+}
+
+#menu a:hover{
+    color:#ff6b00;
+}
+
+/* Animação de sublinhado no menu */
+#menu a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6b00;
+    transition: 0.3s ease;
+}
+
+#menu a:hover::after {
+    width: 100%;
+}
+
+/* BANNER */
+
+#banner{
+    min-height:95vh;
+    display:flex;
+    align-items:center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-texto h1{
+    font-family: hack;
+    font-size: 0.5em;
+}
+
+/* Brilho de fundo */
+#banner::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,107,0,0.2) 0%, rgba(3,12,27,0) 70%);
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.banner-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.banner-texto{
+    width:50%;
+}
+
+.banner-texto h1{
+    font-size:4.5rem;
+    color:#ff6b00;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.banner-texto h1 .logo-text {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.banner-texto h1 .highlight {
+    color: #ff6b00;
+}
+
+.banner-texto h2{
+    margin-top:20px;
+    font-size:1.8rem;
+    color: #e0e0e0;
+}
+
+.banner-texto p{
+    margin-top:25px;
+    font-size: 1.1rem;
+    color: #c0c0c0;
+}
+
+.banner-imagem{
+    width:50%;
+    display: flex;
+    justify-content: center;
+}
+
+.mascote-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255,107,0,0.3));
+    /* Animação contínua e sutil do mascote */
+    animation: mascotFloat 5s ease-in-out infinite;
+}
+
+/* Animação de flutuação do mascote */
+@keyframes mascotFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 40px;
+    background:#ff6b00;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 #d95a00; /* Sombra sólida para profundidade */
+    position: relative;
+    top: 0;
+}
+
+.btn:hover{
+    background:#ff8c1a;
+    top: 2px;
+    box-shadow: 0 4px 0 #d95a00;
+}
+
+.btn:active {
+    top: 6px;
+    box-shadow: 0 0 0 #d95a00;
+}
+
+.btn i {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(5px);
+}
+
+/* ESTATÍSTICAS */
+
+#estatisticas{
+    background:#101826;
+    padding: 60px 0;
+}
+
+.cards-estatisticas{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.card{
+    flex:1;
+    text-align:center;
+    padding:40px;
+    background:#182438;
+    border-radius:15px;
+    border: 1px solid #1f304d;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho no hover */
+.card::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,107,0,0.1) 0%, rgba(3,12,27,0) 70%);
+    top: 150%;
+    left: 150%;
+    transition: 0.5s ease;
+}
+
+.card:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #506180;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.card:hover .card-icon {
+    color: #ff6b00;
+    transform: scale(1.1);
+}
+
+.card h3{
+    color:#ff6b00;
+    font-size:3rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+/* SEÇÕES */
+
+section{
+    padding:100px 0;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:70px;
+    color:#ff6b00;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    font-weight: 900;
+    position: relative;
+}
+
+/* Ícone no título da seção */
+.section-title-icon {
+    margin-right: 15px;
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+/* CARDS INFO & CURSOS */
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+}
+
+.card-info{
+    width:280px;
+    padding:35px;
+    background:#182438;
+    border-radius:15px;
+    text-align:center;
+    border: 1px solid transparent;
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: #ff6b00;
+    margin-bottom: 20px;
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Efeito de expansão e brilho ao passar o mouse */
+.card-hover-expand:hover{
+    transform:translateY(-12px) scale(1.02);
+    border-color: #ff6b00;
+    box-shadow: 0 10px 30px rgba(255,107,0,0.2);
+}
+
+.curso{
+    width:300px;
+    padding:20px 25px;
+    background:#182438;
+    border-radius:50px; /* Estilo pílula */
+    text-align:center;
+    border: 1px solid transparent;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.curso i {
+    font-size: 1.2rem;
+    color: #ff6b00;
+}
+
+.curso:hover{
+    background:#ff6b00;
+    transform:translateY(-5px);
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+}
+
+.curso:hover i {
+    color: white;
+}
+
+/* OBJETIVO */
+
+#objetivo p{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    font-size: 1.2rem;
+    line-height:1.9;
+    color: #d0d0d0;
+}
+
+/* CRONOGRAMA (Timeline Melhorada) */
+
+.timeline{
+    max-width:700px;
+    margin:auto;
+    position: relative;
+}
+
+/* Linha central da timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #2a3c58;
+    left: 20px;
+    top: 0;
+}
+
+.evento{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 60px;
+    margin-bottom:25px;
+}
+
+.timeline-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #182438;
+    border: 4px solid #ff6b00;
+    border-radius: 50%;
+    left: 9px;
+    top: 5px;
+    z-index: 10;
+}
+
+.timeline-content{
+    background:#182438;
+    padding:25px;
+    flex: 1;
+    border-radius:12px;
+    transition:.3s;
+    border: 1px solid #1f304d;
+}
+
+.evento:hover .timeline-content{
+    transform: translateX(10px);
+    border-color: #ff8c1a;
+}
+
+.evento:hover .timeline-marker {
+    background: #ff6b00;
+}
+
+.timeline-content span{
+    color:#ff6b00;
+    font-weight:900;
+    margin-right:15px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-content p {
+    display: inline-block;
+    color: #e0e0e0;
+}
+
+/* PREMIAÇÃO */
+
+.premio-box{
+    max-width:650px;
+    margin:auto;
+    background:#182438;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    border: 2px solid #ff6b00;
+    box-shadow: 0 0 30px rgba(255,107,0,0.1);
+    position: relative;
+}
+
+.premio-box-icon {
+    font-size: 4rem;
+    color: #ff6b00;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(255,107,0,0.5));
+}
+
+.premio-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.premio-box p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+}
+
+/* Animação de pulso contínuo na caixa de premiação */
+.premio-pulse {
+    animation: premioPulse 3s ease-in-out infinite;
+}
+
+@keyframes premioPulse {
+    0%, 100% { box-shadow: 0 0 30px rgba(255,107,0,0.1); }
+    50% { box-shadow: 0 0 50px rgba(255,107,0,0.3); }
+}
+
+/* FOOTER */
+
+footer{
+    background:#101826;
+    text-align:center;
+    padding:40px;
+    border-top:2px solid #ff6b00;
+}
+
+/* CLASSES DE ANIMAÇÃO NO SCROLL (Triggers JS) */
+
+/* Estado inicial escondido */
+.animate-up, .animate-left, .animate-right, .animate-fadeIn {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.animate-up {
+    transform: translateY(50px);
+}
+
+.animate-left {
+    transform: translateX(-50px);
+}
+
+.animate-right {
+    transform: translateX(50px);
+}
+
+.animate-fadeIn {
+    transform: scale(0.9);
+}
+
+/* Estado visível (quando adicionado pelo JS) */
+.animate-up.in-view, 
+.animate-left.in-view, 
+.animate-right.in-view,
+.animate-fadeIn.in-view {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Delays de animação para efeitos de cascata */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* RESPONSIVO */
+
+@media(max-width:992px){
+    .banner-texto h1 { font-size: 3.5rem; }
+    .banner-texto h2 { font-size: 1.5rem; }
+    section h2 { font-size: 2.2rem; }
+}
+
+@media(max-width:768px){
+
+    header .content{
+        flex-direction:column;
+        padding: 15px;
+    }
+
+    #menu{
+        margin-top:20px;
+        text-align:center;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #menu a { font-size: 0.8rem; }
+
+    .logo-image { height: 50px; }
+    .logo-text { font-size: 1.4rem; }
+
+    .banner-content{
+        flex-direction:column-reverse;
+        gap:30px;
+    }
+
+    .banner-texto,
+    .banner-imagem{
+        width:100%;
+        text-align:center;
+    }
+
+    .banner-texto h1 { font-size: 3rem; }
+
+    .mascote-image {
+        max-width: 80%;
+    }
+
+    .cards-estatisticas{
+        flex-direction:column;
+        gap: 20px;
+    }
+
+    .card { padding: 30px; }
+    .card h3 { font-size: 2.5rem; }
+
+    .timeline::before { left: 15px; }
+    .evento { padding-left: 45px; }
+    .timeline-marker { left: 4px; }
+    
+    .timeline-content span { font-size: 1rem; }
+    .timeline-content p { font-size: 0.9rem; }
+}
+
+@media(max-width:480px) {
+    .banner-texto h1 { font-size: 2.5rem; }
+    .card-info, .curso { width: 100%; }
+}
