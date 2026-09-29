@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon Anhanguera</title>
+    <title>Hackathon Faculdade Anhanguera Osasco</title>
     
     <!-- Link para o Font Awesome (Ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -134,7 +135,7 @@
 
                 <div class="cards">
 
-                    <div class="curso tag-hover animate-fadeIn"><i class="fas fa-code"></i> ADS</div>
+                    <div class="curso tag-hover animate-fadeIn"><i class="fas fa-code"></i> Análise e Desenvolvimento de Sistemas</div>
                     <div class="curso tag-hover animate-fadeIn"><i class="fas fa-database"></i> Sistemas de Informação</div>
                     <div class="curso tag-hover animate-fadeIn"><i class="fas fa-laptop-code"></i> Gestão de Tecnologia da Informação</div>
       
@@ -150,10 +151,34 @@
                 <h2><i class="fas fa-bullseye section-title-icon"></i> Objetivo do Evento</h2>
 
                 <p>
-                    O Hackathon Anhanguera tem como objetivo promover
+                    O Hackathon da Faculdade Anhanguera - Osasco tem como objetivo promover
                     inovação, criatividade, trabalho em equipe e o
                     desenvolvimento de soluções tecnológicas para
                     problemas reais da sociedade e do mercado.
+
+                </p>
+                <h2>O que é o Hackathon? 🚀</h3>
+                <p>
+                    O Hackathon é uma intensa maratona de inovação, tecnologia e colaboração. O termo vem da união das palavras Hack (programar e criar soluções com inteligência) e Marathon (maratona).
+                </p>
+                <p>
+                    Diferente de um hackathon tradicional de 24 horas ininterruptas, a nossa maratona foi planejada em etapas e turnos estratégicos, garantindo que você e sua equipe possam programar, aprender, descansar e dar o seu melhor em cada fase do desafio, sem precisar passar a noite em claro!
+                </p>
+                <p>
+                    Durante o evento, alunos dos cursos de Tecnologia da Informação se reúnem em equipes para:
+                </p>
+
+                <p>
+                    💡 Idealizar: Desenvolver ideias criativas e viáveis para problemas reais.<br>
+
+                    💻 Codificar: Criar softwares, aplicativos e protótipos na prática.<br>
+
+                    🤝 Colaborar: Trabalhar em equipe, compartilhar conhecimentos e aprender com mentores experientes.<br>
+
+                    🏆 Apresentar (Pitch): Defender a solução criada diante de uma banca avaliadora.<br>
+                </p>
+                <p>
+                    É a oportunidade perfeita para aplicar na prática tudo o que você aprende na sala de aula, construir seu portfólio, expandir sua rede de contatos (networking) e competir por prêmios incríveis!
                 </p>
 
             </div>
@@ -236,35 +261,11 @@
             <p>
                 Hackathon Anhanguera © 2026 | Desenvolvido com <i class="fas fa-heart" style="color:#ff6b00"></i>
             </p>
+            <p>Prof. Marcel Teixeira</p>
         </div>
     </footer>
 
-    <!-- Adicionando uma solução simples de JS para animação no scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateItems = document.querySelectorAll('.animate-up, .animate-left, .animate-right, .animate-fadeIn');
 
-            const options = {
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        // Se quiser remover a classe quando sair da tela (repetir animação), descomente a linha abaixo
-                        // entry.target.classList.remove('in-view');
-                    } else {
-                         // entry.target.classList.remove('in-view');
-                    }
-                });
-            }, options);
-
-            animateItems.forEach(item => {
-                observer.observe(item);
-            });
-        });
-    </script>
 
 </body>
 </html>
